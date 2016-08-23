@@ -1,2 +1,20 @@
 @import "settings";
 @import "foundation";
+
+/*$global-margin: 1.5rem 0.5rem 0.5rem;
+$global-background: #fff;
+$global-content: isitlight($global-background, #000, #fff);
+$global-header-color: smartscale($global-content, 40%);
+
+.grid-block, .contact-details {
+    margin: $global-margin;
+}
+
+.contact-details {
+    header {
+        color: $global-header-color;
+        font-size: 0.8em;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+}*/
