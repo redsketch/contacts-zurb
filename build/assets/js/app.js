@@ -80,15 +80,15 @@
 })();
 
 (function () {
-	angular.module('contactDetail', ['shared']);
-})();
-
-(function () {
 	angular.module('contactList', ['shared', 'contactDetail']);
 })();
 
 (function () {
 	angular.module('shared', ['shared.contacts']);
+})();
+
+(function () {
+	angular.module('contactDetail', ['shared']);
 })();
 
 (function () {
@@ -121,24 +121,6 @@
 
 (function () {
 	angular.
-	  module('contactDetail').
-	  component('contactDetail', {
-	    templateUrl: '../../templates/contact-detail.template.html',
-	    controller: ['Contact',
-	      function ContactDetailController(Contact) {
-	        this.contact = function (contactId) {
-				console.log(contactId);
-				return Contact.get(contactId);
-			};
-			
-			console.log(this.contact);
-	      }
-	    ]
-	  });
-})();
-
-(function () {
-	angular.
 	  module('contactList').
 	  component('contactList', {
 	    templateUrl: '../../templates/contact-list.template.html',
@@ -161,4 +143,22 @@
 			console.log(contactId);
 		};
 	}
+})();
+
+(function () {
+	angular.
+	  module('contactDetail').
+	  component('contactDetail', {
+	    templateUrl: '../../templates/contact-detail.template.html',
+	    controller: ['Contact',
+	      function ContactDetailController(Contact) {
+	        this.contact = function (contactId) {
+				console.log(contactId);
+				return Contact.get(contactId);
+			};
+			
+			console.log(this.contact);
+	      }
+	    ]
+	  });
 })();
