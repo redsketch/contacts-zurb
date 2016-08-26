@@ -8,27 +8,62 @@ controller: ContactsCtrl
     <div class="grid-container">
         <div class="grid-content noscroll">
             <div class="grid-content contact-details">
-                <h4 class="subheader">Contact Name</h4>
+                <h4 class="subheader" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">Contact Name</h4>
                 <div class="contact-details-content">
-                    <dl>
+                    <dl ng-class="{editing: 'prefix' == editedContactField}">
                         <dt><label>Prefix</label></dt>
-                        <dd>{{contact.prefix}}</dd>
+                        <dd>
+                            <div class="view">
+                                <span ng-dblclick="editContact('prefix', contact)">{{contact.prefix}}</span>
+                            </div>
+                            <form ng-submit="saveName(contact, 'submit')">
+                                <input type="text" class="edit" ng-model="contact.prefix" hit-escape="revertEdits(contact)">
+                            </form>
+                        </dd>
                     </dl>
-                    <dl>
+                    <dl ng-class="{editing: 'first_name' == editedContactField}">
                         <dt><label>First name</label></dt>
-                        <dd>{{contact.first_name}}</dd>
+                        <dd>
+                            <div class="view">
+                                <span ng-dblclick="editContact('first_name', contact)">{{contact.first_name}}</span>
+                            </div>
+                            <form ng-submit="saveName(contact, 'submit')">
+                                <input type="text" class="edit" ng-model="contact.first_name" hit-escape="revertEdits(contact)">
+                            </form>
+                        </dd>
                     </dl>
-                    <dl>
+                    <dl ng-class="{editing: 'middle_name' == editedContactField}">
                         <dt><label>Middle name</label></dt>
-                        <dd>{{contact.middle_name}}</dd>
+                        <dd>
+                            <div class="view">
+                                <span ng-dblclick="editContact('middle_name', contact)">{{contact.middle_name}}</span>
+                            </div>
+                            <form ng-submit="saveName(contact, 'submit')">
+                                <input type="text" class="edit" ng-model="contact.middle_name" hit-escape="revertEdits(contact)">
+                            </form>
+                        </dd>
                     </dl>
-                    <dl>
+                    <dl ng-class="{editing: 'last_name' == editedContactField}">
                         <dt><label>Last name</label></dt>
-                        <dd>{{contact.last_name}}</dd>
+                        <dd>
+                            <div class="view">
+                                <span ng-dblclick="editContact('last_name', contact)">{{contact.last_name}}</span>
+                            </div>
+                            <form ng-submit="saveName(contact, 'submit')">
+                                <input type="text" class="edit" ng-model="contact.last_name" hit-escape="revertEdits(contact)">
+                            </form>
+                        </dd>
                     </dl>
-                    <dl>
+                    <dl ng-class="{editing: 'suffix' == editedContactField}">
                         <dt><label>Suffix</label></dt>
-                        <dd>{{contact.suffix}}</dd>
+                        <dd>
+                            <div class="view">
+                                <span ng-dblclick="editContact('suffix', contact)">{{contact.suffix}}</span>
+                            </div>
+                            <form ng-submit="saveName(contact, 'submit')">
+                                <input type="text" class="edit" ng-model="contact.suffix" hit-escape="revertEdits(contact)">
+                            </form>
+                        </dd>
                     </dl>
                 </div>
             </div>
@@ -94,7 +129,7 @@ controller: ContactsCtrl
             <ul>
                 <li><input type="text" placeholder="Search..." ng-model="searchContact"></li>
                 <li ng-repeat="contact in contacts" class="with-chevron">
-                    <a href="#" ng-click="getDetails(contact.id)" zf-open="details" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">{{contact.first_name}} {{contact.last_name}} {{test}}</a>
+                    <a href="#" ng-click="getDetails(contact.id)" zf-open="details">{{contact.first_name}} {{contact.last_name}} {{test}}</a>
                 </li>
             </ul>
         </section>

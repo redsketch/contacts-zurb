@@ -12,11 +12,6 @@ $global-header-color: smartscale($global-content, 40%);
 }
 
 .contact-details {
-    span {
-        display: inline-block;
-        margin: $global-margin;
-        width: $global-span-width;
-    }
 
     .contact-details-content {
         margin: $global-margin;
@@ -27,9 +22,28 @@ $global-header-color: smartscale($global-content, 40%);
     }
 
     &#addresses {
+        li {
+            margin-bottom: 3rem;
+        }
         /*        .contact-details-content {
                     border: 1px solid #000;
                     padding: 0.5rem;
                 }*/
+    }
+}
+
+.contact-details-content {
+    dl.editing {
+        .edit {
+            display: block;
+        }
+
+        .view {
+            display: none;
+        }
+    }
+
+    .edit {
+        display: none;
     }
 }

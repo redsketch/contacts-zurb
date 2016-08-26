@@ -5892,11 +5892,6 @@ blockquote p {
 .grid-block, .contact-details {
   margin: 1.5rem 0.5rem 0.5rem; }
 
-.contact-details span {
-  display: inline-block;
-  margin: 1.5rem 0.5rem 0.5rem;
-  width: 13rem; }
-
 .contact-details .contact-details-content {
   margin: 1.5rem 0.5rem 0.5rem; }
 
@@ -5908,3 +5903,14 @@ blockquote p {
                     border: 1px solid #000;
                     padding: 0.5rem;
                 }*/ }
+  .contact-details#addresses li {
+    margin-bottom: 3rem; }
+
+.contact-details-content dl.editing .edit {
+  display: block; }
+
+.contact-details-content dl.editing .view {
+  display: none; }
+
+.contact-details-content .edit {
+  display: none; }
